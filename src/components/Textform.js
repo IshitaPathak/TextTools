@@ -71,7 +71,7 @@ export default function Textform(props) {
 </div>
 <button className="btn btn-primary lg mx-2" onClick={handleUpCase}>Convert to Uppercase</button>
 <button className="btn btn-primary lg mx-2" onClick={handleLoCase}>Convert to Lowercase</button>
-<button  onClick={speak} className="btn btn-primary mx-2" id="toggle">Speak</button>
+<button className="btn btn-primary mx-2" id="toggle" onClick={speak}>Speak</button>
 <button className="btn btn-primary lg mx-2" onClick={handleClearCase}>Clear Text</button>
 <button className="btn btn-primary lg mx-2" onClick={HandleCopy}>Copy Text</button>
 <button className="btn btn-primary lg mx-2" onClick={HandleExtraSpace}>Remove Extra Space</button>
