@@ -41,19 +41,17 @@ function App() {
   }
   return (
     <>
-      <Router>
-        <Navbar title="⚙️ TextTools" Mode={Mode} toggleMode={toggleMode} />
-        <Alert alert={alert} />
-        <div className="container">
+<Router>
+      <Navbar title="⚙️ TextTools" Mode={Mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
+      <div className="container">
+        
           <Routes>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <Textform showAlert={showAlert} heading="Enter the text below" Mode={Mode} />
-            </Route>
+            <Route path="/about" element={<About />} />
+            <Route path="/" element={<Textform showAlert={showAlert} heading="Enter the text below" Mode={Mode} />} />
           </Routes>
-        </div>
+       
+      </div>
       </Router>
     </>
   );
