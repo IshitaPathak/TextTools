@@ -3,46 +3,59 @@ import About from './components/About';
 import Navbar from './components/Navbar.js';
 import Textform from './components/Textform.js';
 import Alert from './components/Alert.js';
-import React,{ useState } from 'react';
-
-
+import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
-  const [Mode, setMode]=useState('light'); // Tells whether dark mode is enable or not.
-  const [alert,setAlert]=useState(null);
+  const [Mode, setMode] = useState('light'); // Tells whether dark mode is enable or not.
+  const [alert, setAlert] = useState(null);
 
-  const showAlert = (message,type)=>{
+  const showAlert = (message, type) => {
     setAlert({
       msg: message,
       type: type
     })
+    setTimeout(() => {
+      setAlert(null);
+    }, 1000)
   }
-  
 
-  const toggleMode=()=>{
-    if (Mode==='dark'){
+
+  const toggleMode = () => {
+    if (Mode === 'dark') {
       setMode('light');
-      document.body.style.backgroundColor='white';
+      document.body.style.backgroundColor = 'white';
       showAlert("Dark mode has been enabled", "success");
     }
-    else{
+    else {
       setMode('dark');
-      document.body.style.backgroundColor='#3c3636';
+      document.body.style.backgroundColor = '#3c3636';
       showAlert("Light mode has been enabled", "success");
     }
   }
   return (
- <>
-<Navbar title="TextUtilss" Mode={Mode} toggleMode={toggleMode}/>
-{/* <Alert alert={alert}/> */}
-<Alert alert={alert}/>
-<div className="container">
-<Textform heading="Enter the text below" Mode={Mode}/>
-<About/>
-</div>
-
- </>
+    <>
+      <Router>
+        <Navbar title="⚙️ TextTools" Mode={Mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <div className="container">
+          <Routes>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/">
+              <Textform showAlert={showAlert} heading="Enter the text below" Mode={Mode} />
+            </Route>
+          </Routes>
+        </div>
+      </Router>
+    </>
   );
 }
 
