@@ -74,17 +74,17 @@ export default function Textform(props) {
                         value={Text} id="myBox" rows="8"></textarea>
 
                 </div>
-                <button className="btn btn-primary lg mx-2" onClick={handleUpCase}>Convert to Uppercase</button>
-                <button className="btn btn-primary lg mx-2" onClick={handleLoCase}>Convert to Lowercase</button>
-                <button className="btn btn-primary mx-2" id="toggle" onClick={speak}>Speak</button>
-                <button className="btn btn-primary lg mx-2" onClick={handleClearCase}>Clear Text</button>
-                <button className="btn btn-primary lg mx-2" onClick={HandleCopy}>Copy Text</button>
-                <button className="btn btn-primary lg mx-2" onClick={HandleExtraSpace}>Remove Extra Space</button>
+                <button className="btn btn-primary lg mx-2 my-2" onClick={handleUpCase}>Convert to Uppercase</button>
+                <button className="btn btn-primary lg mx-2 my-2" onClick={handleLoCase}>Convert to Lowercase</button>
+                <button className="btn btn-primary mx-2 my-2" id="toggle" onClick={speak}>Speak</button>
+                <button className="btn btn-primary lg mx-2 my-2" onClick={handleClearCase}>Clear Text</button>
+                <button className="btn btn-primary lg mx-2 my-2" onClick={HandleCopy}>Copy Text</button>
+                <button className="btn btn-primary lg mx-2 my-2" onClick={HandleExtraSpace}>Remove Extra Space</button>
 
             </div>
             <div className="container my-3" style={{ color: props.Mode === 'dark' ? 'white' : '#3c3636' }}>
                 <h3>Your Text Summary</h3>
-                <p>{Text.split(" ").length} words and {Text.length} letters</p>
+                <p>{Text.split(" ").filter((element)=>{return element.length!==0}).length} words and {Text.replace(/\s+/g, '').length} letters</p>
                 <p>{0.008 * Text.split(" ").length} Minutes read</p>
                 <h3>Preview</h3>
                 <p>{Text.length > 0 ? Text : "Enter the text in above textbox to preview it."}</p>
