@@ -12,6 +12,10 @@
 - Word and Character Count functionality
 - Estimated time required to read the text
 
+<p align='center'><img width="957" alt="Screenshot 2024-01-12 192917" src="https://github.com/IshitaPathak/TextTools/assets/75848598/cc667230-12dc-4e44-a55f-75edc1482066"></p>
+
+<p align='center'> <img width="958" alt="Screenshot 2024-01-12 192939" src="https://github.com/IshitaPathak/TextTools/assets/75848598/2a8e1ea9-91a5-45fe-9bb7-c89a866e0e03" width="300"></p>
+
 ### Installation Steps
 
 1. **Fork the repository to your own GitHub account.**
