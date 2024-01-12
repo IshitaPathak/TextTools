@@ -18,7 +18,7 @@ export default function Navbar(props) {
           </li> */}
           <li className="nav-item">
               {/* <Link className="nav-link" to="/about">{props.aboutText}</Link> */}
-              <a href="https://github.com/IshitaPathak/TextTools/tree/master" className="nav-link" target="_blank" rel="noopener noreferrer">  SourceCode</a>
+              <a href="https://github.com/IshitaPathak/TextTools/tree/master" className="nav-link" target="_blank" rel="noopener noreferrer"> GitHub</a>
             </li>
          
         </ul>
